@@ -1,30 +1,29 @@
-package com.team7.yourturn.module.home;
+package com.team7.yourturn.module.count;
 
 import com.team7.yourturn.module.base.BaseController;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.security.Key;
 
-public class ModeSelectListener implements KeyListener {
+public class CountSelectedListener implements KeyListener {
 
     private BaseController parentController;
 
-    public ModeSelectListener(BaseController controller) {
+    public CountSelectedListener(BaseController controller){
         parentController = controller;
     }
 
     @Override
-    public void keyTyped(KeyEvent keyEvent) {
+    public void keyTyped(KeyEvent e) {
 
     }
 
     @Override
-    public void keyPressed(KeyEvent keyEvent) {
-        switch (keyEvent.getKeyCode()) {
+    public void keyPressed(KeyEvent e) {
+        switch (e.getKeyCode()){
             case KeyEvent.VK_DOWN:
                 parentController.addEvent(KeyEvent.VK_DOWN);
-                System.out.println("get Message");
+                System.out.println("get count Message");
                 break;
             case KeyEvent.VK_UP:
                 parentController.addEvent(KeyEvent.VK_UP);
@@ -33,13 +32,12 @@ public class ModeSelectListener implements KeyListener {
                 parentController.addEvent(KeyEvent.VK_ENTER);
 
                 break;
-
         }
+
     }
 
     @Override
-    public void keyReleased(KeyEvent keyEvent) {
+    public void keyReleased(KeyEvent e) {
 
     }
-
 }
